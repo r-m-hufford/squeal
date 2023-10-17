@@ -100,3 +100,10 @@ ORDER BY employee_id;
 /* Emplopyee Salaries
 find the difference between the most and least populace cities */
 SELECT (max(population) - min(population)) from CITY;
+
+/* Higher Than 75 Marks
+find students with grades higher than 75
+order by last 3 letters in first name. Order by id
+where there are duplicates
+*/
+SELECT name FROM students where marks > 75 order by right(name, 3), id;
