@@ -107,3 +107,16 @@ order by last 3 letters in first name. Order by id
 where there are duplicates
 */
 SELECT name FROM students where marks > 75 order by right(name, 3), id;
+
+/* Type of Triangle
+Write a query identifying the type of triangle
+of each record in the table
+*/
+SELECT
+  CASE
+    WHEN A+B <= C OR A+C <= B OR B+C <= A THEN "Not A Triangle"
+    WHEN A=B AND A=C THEN "Equilateral"
+    WHEN A=B or A=C or B=C THEN "Isosceles"
+    ELSE 'Scalene'
+  END
+FROM TRIANGLES;
