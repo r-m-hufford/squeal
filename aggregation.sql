@@ -21,5 +21,14 @@ SELECT ROUND(AVG(population), 0) FROM CITY;
 /* Japan Population
 Query the total population of all Japanese cities
 */
-SELECT ROUND(AVG(population), 0) FROM CITY;
+SELECT SUM(population) FROM CITY WHERE countrycode = 'JPN';
 
+/* The Blunder
+Write a query calculating the amount of error (i.e.:  average monthly salaries), 
+and round it up to the next integer.
+*/
+SELECT CEILING(AVG(salary) - AVG(REPLACE(salary, 0, ''))) FROM employees;
+
+/* Top Earners
+
+*/
