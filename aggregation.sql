@@ -30,5 +30,28 @@ and round it up to the next integer.
 SELECT CEILING(AVG(salary) - AVG(REPLACE(salary, 0, ''))) FROM employees;
 
 /* Top Earners
+find the highest salray and the number of employees who earn that 
 
+The "obvious" solution to this problem is to use max to find the highest
+salary and a subquery (that finds max again) to find the count. But, when 
+searching for groups like this aliasing the math and then using GROUP BY
+is the simpler solution.
 */
+SELECT months * salary AS earnings, COUNT(*) AS count 
+FROM employee GROUP BY earnings ORDER BY earnings DESC LIMIT 1;
+
+/* Weather Observation Station 2
+select the sum of all values in LAT_N and LONG_W and round to 2 decimal places
+*/
+SELECT ROUND(SUM(LAT_N), 2), ROUND(SUM(LONG_W), 2) FROM STATION;
+
+/* Weather Observation Station 13
+find the sum of latitudes where the value is greater than 38.7880 and 
+less than 137.2345. Round to the 4th decimal place.
+*/
+SELECT ROUND(SUM(LAT_N), 4) FROM STATION WHERE LAT_N > 38.7880 AND LAT_N < 137.2345; 
+
+/* Weather Observation Station 14
+find the highest value that is less than 137.2345
+*/
+SELECT ROUND(MAX(LAT_N), 4) FROM STATION WHERE LAT_N < 137.2345;
