@@ -55,3 +55,20 @@ SELECT ROUND(SUM(LAT_N), 4) FROM STATION WHERE LAT_N > 38.7880 AND LAT_N < 137.2
 find the highest value that is less than 137.2345
 */
 SELECT ROUND(MAX(LAT_N), 4) FROM STATION WHERE LAT_N < 137.2345;
+
+/* Weather Observation Station 15
+find the western longitude for the largest northern latitude
+round answer to 4 decimal places
+*/
+SELECT ROUND(LONG_W, 4) FROM STATION WHERE LAT_N < 137.2345 ORDER BY LAT_N DESC LIMIT 1; 
+
+/* Weather Observation Station 16
+find the smallest northern latitude that is 
+greater than 38.7780 and round to the 4th decimal place
+*/
+SELECT ROUND(LAT_N, 4) FROM STATION WHERE LAT_N > 38.7780 ORDER BY LAT_N LIMIT 1;
+
+/*
+the point of this on and the last one is to show that you can use
+odrber by and limit to find the max and min values in a column
+*/
