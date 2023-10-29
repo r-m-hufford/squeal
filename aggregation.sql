@@ -72,3 +72,9 @@ SELECT ROUND(LAT_N, 4) FROM STATION WHERE LAT_N > 38.7780 ORDER BY LAT_N LIMIT 1
 the point of this on and the last one is to show that you can use
 odrber by and limit to find the max and min values in a column
 */
+
+/* Weather Observation Station 17 
+Query the western longitude where the smallest northern lat
+is greater than 38.7780. Round to 4 decimal place.
+*/
+SELECT ROUND(LONG_W, 4) FROM STATION WHERE LAT_N > 38.7780 ORDER BY LAT_N LIMIT 1;
