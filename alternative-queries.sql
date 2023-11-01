@@ -1,0 +1,4 @@
+/* Draw the Triangle 1 */
+SET @TEMP:=21; 
+SELECT REPEAT('* ', @TEMP:= @TEMP - 1) 
+FROM INFORMATION_SCHEMA.TABLES;
